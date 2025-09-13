@@ -24,8 +24,8 @@
       </div>
 
       <div class="row">
-        <label for="size">Size: <span id="sizeVal">50</span></label>
-        <input id="size" type="range" min="5" max="200" value="50" aria-label="Array size" />
+        <label for="size">Bars: <span id="sizeVal">50</span></label>
+        <input id="size" type="range" min="5" max="200" value="50" aria-label="Number of bars" />
       </div>
 
       <div class="row">
@@ -39,13 +39,28 @@
         <button id="stop" class="btn danger" disabled>Stop</button>
       </div>
 
-      <details class="hint">
+      <!-- Box 1: Algorithm description -->
+      <details class="desc open-like">
         <summary>Fun Fact</summary>
-        <p>It might take a few years for the bogo sort to finish if you set it to 200 bars... don't get any ideas.</p>
+        <p id="algoDesc"></p>
       </details>
     </section>
 
     <section class="viz-container">
+      <!-- Top status row: Box 2 (progress) + Box 3 (timer) -->
+      <div class="status-row">
+        <div class="progress-wrap" aria-label="Progress">
+          <div id="progressBar" class="progress">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div id="progressText" class="progress-text">0%</div>
+        </div>
+        <div class="timer" aria-live="polite">
+          <span>Time:</span>
+          <strong id="timerText">00:00.000</strong>
+        </div>
+      </div>
+
       <div id="bars" class="bars" role="img" aria-label="Array bars visualization"></div>
     </section>
   </main>
@@ -57,3 +72,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
