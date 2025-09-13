@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorting Visualizer — Merge, Bubble, RNG</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="app-header">
+    <h1>Sorting Visualizer</h1>
+    <p class="subtitle">Merge • Bubble • RNG (Bogo)</p>
+  </header>
+
+  <main class="app">
+    <section class="controls">
+      <div class="row">
+        <label for="algo">Algorithm</label>
+        <select id="algo" aria-label="Algorithm">
+          <option value="merge">Merge Sort</option>
+          <option value="bubble">Bubble Sort</option>
+          <option value="rng">RNG (Bogo) Sort</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="size">Size: <span id="sizeVal">50</span></label>
+        <input id="size" type="range" min="5" max="200" value="50" aria-label="Array size" />
+      </div>
+
+      <div class="row">
+        <label for="speed">Speed: <span id="speedVal">30 ms</span></label>
+        <input id="speed" type="range" min="0" max="200" value="30" aria-label="Animation speed (ms)" />
+      </div>
+
+      <div class="row wrap">
+        <button id="randomize" class="btn secondary" title="Shuffle / New data">Randomize</button>
+        <button id="start" class="btn primary">Start</button>
+        <button id="stop" class="btn danger" disabled>Stop</button>
+      </div>
+
+      <details class="hint">
+        <summary>RNG (Bogo) guardrails</summary>
+        <p>Let's go gambling?</p>
+      </details>
+    </section>
+
+    <section class="viz-container">
+      <div id="bars" class="bars" role="img" aria-label="Array bars visualization"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span>Built for GitHub-style projects — drop these files in a repo and enable GitHub Pages.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
